@@ -68,11 +68,15 @@ body {
 }
 
 #output {
+  display: inline-block;
   width: 350px;
   height: 50px;
   margin: 25px 25px;
+  font-size: 1.2em;
   text-align: right;
+  padding-top: 10px;
   background-color: #CDDECC;
+  overflow: hidden;
 }
 
 #interface {

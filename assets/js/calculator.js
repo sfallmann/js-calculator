@@ -79,10 +79,31 @@ var calculator = {};
     }));
   }
 
+  function formatNum(str) {
+    
+    if (/\./.test(str)){
+      var strArr = str.split('.');
+
+      var integer = strArr[0];
+      var fraction = Number(strArr[1]).toPrecision(5);
+
+      str = integer + fraction;
+    } 
+
+    if (str.length > 12){
+      str = Number(str).toExponential();
+    }
+
+    return str;
+
+  }
+
   function calculate(str){
     
     if(numRegExp.exec(str)){
-      return Number(str);
+
+      
+      return formatNum(str);
     }
 
     str = percentages(str);
@@ -103,6 +124,11 @@ var calculator = {};
   calculator.calculate = function(str){
     return calculate(str);
   }
+
+  calculator.operators = function(){
+    return ['%','^','x','/','+','-','='];
+  }
+
 
 })(calculator);
 
