@@ -1,0 +1,17 @@
+{
+  "name": "calculator",
+  "authors": [
+    "Sean Fallmann <jorundr@hotmail.com>"
+  ],
+  "description": "A javascript calculator",
+  "main": "index.html",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
