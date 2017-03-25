@@ -1,10 +1,8 @@
 ;
-'use strict';
 
-var calculator = {};
 
-(function(calculator) {
-
+var Calculator = Calculator || (function() {
+  'use strict';
   var negRegExp = new RegExp(/\-\-/g);
   var percentRegExp = new RegExp(/\-{0,1}\d*\.{0,1}\d*%/g)
   var powRegExp = new RegExp(/\-{0,1}\d*\.{0,1}\d*\^\d*/);
@@ -84,15 +82,10 @@ var calculator = {};
     if (/\./.test(str)){
       var strArr = str.split('.');
 
-      var integer = strArr[0];
-      var fraction = Number(strArr[1]).toPrecision(5);
-
-      str = integer + fraction;
+      var integer = Number(strArr[0]);
+      var fraction = Number(Number("0." + strArr[1]).toPrecision(5));
+      str = String(integer + fraction);
     } 
-
-    if (str.length > 12){
-      str = Number(str).toExponential();
-    }
 
     return str;
 
@@ -101,8 +94,6 @@ var calculator = {};
   function calculate(str){
     
     if(numRegExp.exec(str)){
-
-      
       return formatNum(str);
     }
 
@@ -121,6 +112,9 @@ var calculator = {};
     }
   }
 
+
+  var calculator = {};
+
   calculator.calculate = function(str){
     return calculate(str);
   }
@@ -129,6 +123,6 @@ var calculator = {};
     return ['%','^','x','/','+','-','='];
   }
 
+  return calculator;
 
-})(calculator);
-
+})();
