@@ -64,12 +64,8 @@ body {
 }
 
 #title {
-  max-width: 400px;
-  margin: auto;
-  margin-top: 50px;
-  margin-bottom: 50px;
 
-  padding: 10px;
+  margin-bottom: 20px;
   text-align: center;
   font-size: 2em;
   color: white;
@@ -90,7 +86,7 @@ body {
 
 #output {
   display: inline-block;
-  width: 350px;
+  width: 305px;
   height: 50px;
   margin: 25px 25px;
   font-size: 1.2em;
@@ -153,6 +149,24 @@ body {
 
   .container {
     padding: 100px 200px 0 200px;
+  }
+
+  #output {
+    width: 350px;
+  }
+
+  #title {
+    max-width: 400px;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+    padding: 10px;
+    text-align: center;
+    font-size: 2em;
+    color: white;
+    border-top: 3px dashed white;
+    border-bottom: 3px dashed white;
   }
 
   .col-1 {width: 8.33%;}
